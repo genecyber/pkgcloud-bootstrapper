@@ -15,7 +15,8 @@ var bootstrapper = new Bootstrapper({ compute: client });
 var ee = bootstrapper.createServer({
   name: 'mad_torvald',
   image: 'ubuntu-13.10',
-  flavor: '512mb'
+  flavor: '512mb',
+  commands: ['apt-get install -y nginx']
 });
 
 ee.on('error', function (err) {
